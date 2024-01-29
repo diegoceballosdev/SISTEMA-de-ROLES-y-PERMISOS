@@ -197,10 +197,15 @@ public class PrincipalUser extends javax.swing.JFrame {
             
             //CREAR LAS FILAS (REGISTRO DE CADA USUARIO) Y AGREGAR A LA TABLA:
             for(Usuario user : listaUsuarios){
+                
+                if (user.getRolUsuario().getNombreRol().equals("user")){
+                    
+                    Object[] registro = {user.getId(), user.getNombreUsuario(), user.getRolUsuario().getNombreRol()};
 
-                Object[] registro = {user.getId(), user.getNombreUsuario(), user.getRolUsuario().getNombreRol()};
+                    modeloTabla.addRow(registro);
+                }
 
-                modeloTabla.addRow(registro);
+
             }
         }
         
